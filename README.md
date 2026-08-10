@@ -2,6 +2,8 @@
 Implementation of "coming soon" by Xinxin Niu, Yixuan Xin, Yanfeng Dang, Yajing Sun, and Wenping Hu.  
 (Paper: coming soon)
 
+LumiRL-U is an uncertainty-aware hierarchical reinforcement learning framework for goal-directed generation and multi-property optimization of organic optoelectronic molecules, combining atom–motif representations with minimal-ring decomposition and Kekulé-resonance guidance to preserve chemically meaningful structures. By incorporating predictive uncertainty into the reward function, LumiRL-U mitigates reward hacking and enables reliable exploration of high-performance molecular candidates, as demonstrated in TADF molecule generation.
+
 # ![](png/TOC.png)
 
 ## Environment
