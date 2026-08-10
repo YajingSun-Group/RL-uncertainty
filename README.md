@@ -1,5 +1,5 @@
 # RL-uncertainty
-Implementation of "coming soon" by Xinxin Niu, Yanfeng Dang, Yajing Sun, and Wenping Hu.  
+Implementation of "coming soon" by Xinxin Niu, Yixuan Xin, Yanfeng Dang, Yajing Sun, and Wenping Hu.  
 (Paper: coming soon)
 
 # ![](png/TOC.png)
@@ -47,7 +47,7 @@ bash examples/RL/run_step_dup_SA_rdkit.sh
 If you find our work relevant to your research, please cite:
 ```
 @article{title={coming soon},
-    author={Xinxin Niu, Yanfeng Dang, Yajing Sun, and Wenping Hu},
+    author={Xinxin Niu, Yixuan Xin, Yanfeng Dang, Yajing Sun, and Wenping Hu},
     year={2025},
     journal={coming soon}
 }
