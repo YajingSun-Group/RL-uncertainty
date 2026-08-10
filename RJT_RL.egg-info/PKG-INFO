@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: RJT-RL
+Version: 0.0.1
+Summary: Reversible Junction Tree Reinforcement Learning
+Home-page: https://github.com/pfnet-research/RJT-RL
+Author: Ryuichiro Ishitani
+Author-email: ishitani@preferred.jp
+Requires-Dist: gym<=0.18.3
+Requires-Dist: pytorch_pfn_extras==0.5.5
+Requires-Dist: toml
+Requires-Dist: torch==2.4.1
+Requires-Dist: torch_geometric
+Requires-Dist: tqdm>=4.60.0
+Requires-Dist: pandas>=1.2.4
+Requires-Dist: numpy>=1.10
+Requires-Dist: omegaconf>=2.1.0
+Requires-Dist: pfrl==0.3.0
+Requires-Dist: networkx~=2.5.0
+Requires-Dist: packaging
+Requires-Dist: joblib~=1.1.0
+Requires-Dist: descriptastorus
+Requires-Dist: scikit-learn
+Requires-Dist: chemprop
+Requires-Dist: rdkit==2024.3.2
+Requires-Dist: rdkit-pypi==2022.9.4
+Provides-Extra: dev
+Requires-Dist: pytest>=5.4.2; extra == "dev"
+Requires-Dist: pytest-cov>=2.9.0; extra == "dev"
+Requires-Dist: pytest-xdist>=2.3.0; extra == "dev"
+Requires-Dist: pysen==0.10.2; extra == "dev"
+Requires-Dist: invoke==1.4.1; extra == "dev"
+Requires-Dist: black==22.3.0; extra == "dev"
+Requires-Dist: isort==5.1.4; extra == "dev"
+Requires-Dist: flake8==4.0.1; extra == "dev"
+Requires-Dist: flake8-bugbear==22.7.1; extra == "dev"
+Requires-Dist: mypy==0.971; extra == "dev"
+Requires-Dist: types-toml; extra == "dev"
+
+# RL-uncertainty
+Implementation of "文章名字" by Xinxin Niu.  
+(Paper: 网址)
+
+![](png/TOC.png)
+
+## Environment
+This package run under the environment:
+* Python: 3.8
+
+To install the package and dependencies,首先你需要创建一个虚拟环境并激活他:
+```
+conda create -n RJT-github python==3.8.0
+source activate RJT-github
+pip install setuptools==57.5.0
+pip install .
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.4.1+cu121.html
+```
+
+## 运行RL-uncertainty的必要条件
+1.data/FORMAT_vocab.csv，这是使用Mol Tree原理对FORMAD数据集中的所有样本进行拆分得到的无重复片段集合。要得到该文件需要运行xx.py
+2.examples/*.yaml, 包含了模型训练过程的设定，可以自行修改内容并创建
+3.examples/*.sh,配置启动 PPO 强化学习训练，可以自行修改内容并创建
+4.GNN_finetune_model中包含了预先训练的Union-GCN模型,想要自己动手训练这些模型需要运行xx
+5.results中给出了本课题执行的RL结果
+6.rjt_rl/, scripts/,包含了必要的代码实现。尤其是rjt_rl/rjt中包含了Mol Tree的表示方法，rjt_rl/rl中包含了agent,environment,rewards的代码实现。
+
+## Usage
+
+
+

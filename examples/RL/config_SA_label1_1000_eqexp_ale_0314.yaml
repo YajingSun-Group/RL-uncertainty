@@ -1,0 +1,56 @@
+trainer:
+  seed: 2
+  steps: 50000
+  learning_rate: 1e-3
+  final_learning_rate: ${trainer.learning_rate}
+  outdir: ${oc.env:OUTDIR}
+  pretrained_model: ${oc.env:MODEL_DIR}/FORMAT_best_model.pt
+  expert_batch_size: 128
+  snap_freq: 1024
+  resume: ${oc.env:OUTDIR}/last_snap.pt
+  vocab: ${oc.env:DATASET_DIR}/FORMAT_vocab.csv
+  init_smiles: CC ##
+
+  history:
+    class: SimpleHistory
+    backup_freq: 100
+    history_dir: ${oc.env:OUTDIR}/history
+
+  dataset:
+    class: ExpertDataset2
+    input_pkl: ${oc.env:DATASET_DIR}/worker
+
+  agent:
+    epochs: 2
+    batch_size: 128
+    update_interval: 256 #1024
+    expert_coef: 0.0 #0.003 #专家损失权重
+    value_func_coef: 1.0 #1.0
+    entropy_coef: 0.5 #0.5  
+    entropy_clip: 1.0 #策略熵超参数,熵越大,表示策略的选择越随机,熵越小,则表示策略的选择越确定.
+
+  model:
+    hidden_size: 128
+
+  reward:
+    class: MPNNReward
+    valid_step_reward: 0.0
+    invalid_step_reward: -0.1
+    reuse_step_score: true
+    prop_model1: ${oc.env:MODEL_DIR}/SA_0312_label1_1000/fold_0/model_0/model.pt ##
+    prop_model2: ${oc.env:MODEL_DIR}/SA_0312_label1_1000/fold_0/model_1/model.pt
+    prop_model3: ${oc.env:MODEL_DIR}/SA_0312_label1_1000/fold_0/model_2/model.pt
+    EPI: 0.0
+    ALE: 1.0
+    eq_exp: 1.0
+    eq_k: 0.0
+    lambda_ale: 0.2267
+    lambda_epi: 0.1346
+    k_ale: 2.6852
+    k_epi: 1.0554
+    
+
+logger:
+  level: info
+
+#TADFscoreReward, PenalizedLogPReward,PropReward,MPNNReward
