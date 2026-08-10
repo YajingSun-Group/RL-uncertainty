@@ -1,1 +1,0 @@
-MAX_ACTIONS = 50

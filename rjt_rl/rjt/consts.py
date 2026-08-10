@@ -1,2 +1,0 @@
-MAX_NB = 8
-MAX_SITES = 7
