@@ -64,3 +64,7 @@ If you find our work relevant to your research, please cite:
     journal={coming soon}
 }
 ```
+
+## License
+
+Original code in this repository may be used, copied, and modified for non-commercial academic research, teaching, and reproducibility. Commercial use requires prior written permission from the copyright holder. Third-party materials remain subject to their own licenses. See [LICENSE](LICENSE).
